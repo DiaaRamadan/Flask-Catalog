@@ -1,0 +1,42 @@
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+
+<div class="items">
+    <div class="container">
+        {% with massages = get_flashed_messages() %}
+            {% if massages %}
+                {% for massage in massages %}
+                    <p class="alert alert-success"><strong>{{massage}}</strong></p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+         <div class="item-info">
+             <h1 class="text-center">{{category.name}}</h1>
+             <a href="{{url_for('create_item', cat_id = category.id)}}" style="margin-bottom: 45px; margin-left: 50px" class="btn btn-primary">Add item</a>
+            <div class="row">
+                {% for item in items %}
+                <div class="col col-lg-4 col-md-6 col-12">
+                    <div class="item  mg-responsive img-thumbnail">
+                        <h3>{{item.itemName}}</h3>
+                        <p>{{item.itemDesc}}</p>
+                        <span>Price:<span class="price-amount">{{item.itemPrice}}</span></span>
+                        {% if item.userID == user.id or session['user']=='admin' %}
+                            <div>
+                                <a href="{{url_for('editItem', cat_id=category.id, item_id = item.item_id)}}"
+                                   class="btn btn-info">Edit</a>
+                                <a href="{{url_for('deleteItem', cat_id=category.id, item_id = item.item_id)}}"
+                                   class="btn btn-danger">Delete</a>
+                            </div>
+                        {%else %}
+                            <div>
+                                <a href="#" class="btn btn-info">Buy now</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}

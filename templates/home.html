@@ -1,0 +1,51 @@
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+<div class="home">
+<div class="container">
+    <h1 class="text-center">All Categories</h1>
+    <!-- Start print the Flash massages -->
+    {% with massages = get_flashed_messages() %}
+        {% if massages %}
+            {% for massage in massages %}
+                <p class="alert alert-success"><strong>{{massage}}</strong></p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {% if session['logged_in'] == True%}
+    <div class="other-btn-cat">
+      <a href="{{url_for('create_category')}}"class="btn btn-primary">Create Category</a>
+      <a href="{{url_for('CategoryJason')}}" class="btn btn-primary">Show Categorise as a jason</a>
+        <a href="{{url_for('itemJason')}}" class="btn btn-primary">Show Items as a jason</a>
+    </div>
+    {% endif %}
+    <!-- end print the Flash massages -->
+    <!-- Start show the Categories -->
+    <div class="home-cats">
+        <div class="row other">
+        {% for cat in categories %}
+        <div class="col col-lg-4 col-md-6 col-12 ">
+            <div class="cat-info  img-responsive img-thumbnail">
+            <h3>{{cat.name}}</h3>
+            <p>{{cat.description}}</p>
+                <div class="cat-btn">
+                <a href="{{url_for('showCategoryItems', cat_id=cat.id)}}" class="btn btn-info show-cat-btn">Show</a>
+                {% if session['logged_in'] == True and session['username']=='admin' %}
+                    <a href="#" class="btn btn-info">Edit</a>
+                    <a href="{{url_for('create_item', cat_id = cat.id)}}" class="btn btn-primary">Add item</a>
+                    <a href="{{url_for('deleteCategory', cat_id = cat.id)}}" class="btn btn-danger">Delete</a>
+                    {% else %}
+                      <a href="{{url_for('create_item', cat_id = cat.id)}}" class="btn btn-primary">Add item</a>
+                {% endif %}
+
+                </div>
+            </div>
+
+        </div>
+        {% endfor%}
+        </div>
+    </div>
+    <!-- Start show the Categories -->
+</div>
+</div>
+
+{% include 'footer.html' %}

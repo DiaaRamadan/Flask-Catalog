@@ -1,0 +1,32 @@
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+
+<div class="new-cat">
+    <div class="container">
+        <h1 class="text-center">Add New Category</h1>
+        <form method="POST" action="{{url_for('create_category')}}">
+            <!-- Start Category name -->
+            <div class="cat-name form-group">
+                <label class="col col-md-3"> Name</label>
+
+               <input type="text"
+                      class="col col-md-6 form-control"
+                      required
+                      name="catname"
+                      placeholder="Category Name">
+            </div>
+             <!-- end Category name -->
+             <!-- Start Category description -->
+            <div class="cat-description form-group">
+                <label class="col col-md-3">Description</label>
+                <textarea name="cat_desc" maxlength="120" class="form-control col col-md-6 "></textarea>
+            </div>
+             <!-- end Category name -->
+            <input type="submit" class="btn btn-primary add-cat-btn" value="Create">
+        </form>
+        <button class="btn btn-danger cancel-cat-btn"><a href="{{url_for('index')}}">Cancel</a></button>
+    </div>
+</div>
+
+
+{% include 'footer.html' %}

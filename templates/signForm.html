@@ -1,0 +1,56 @@
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+
+{% with massages = get_flashed_messages() %}
+    {% if massages %}
+        {% for massage in massages %}
+            <p class="alert alert-danger container"><strong>{{massage}}</strong></p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    <div class="sign-form">
+        <div class="container">
+            <h1 class="text-center">Sign Up</h1>
+            <form class="form-group" method="POST" action="{{url_for('new_users')}}">
+                <!-- Start Username -->
+                <div class="sign-inputs form-group">
+                    <input type="text"
+                           class="form-control"
+                           name="username"
+                           placeholder="Enter Username"
+                           required
+                            />
+                </div>
+                <!-- End Username -->
+                <!-- Start Email -->
+                <div class="sign-inputs form-group">
+                    <input type="email"
+                           class="form-control"
+                           name="email"
+                           placeholder="Enter your email"
+                           required
+                           />
+                </div>
+                <!-- End Email -->
+                <!-- Start Password -->
+                <div class="sign-inputs form-group">
+                    <input type="password"
+                           class="form-control"
+                           name="password"
+                           placeholder="Enter Password"
+                           required
+                           />
+                </div>
+                <!-- End Password -->
+                <!-- Start Sign Button -->
+                <div class="form-group">
+                    <input type="submit"
+                           class="btn btn-success sign-btn"
+                           value="Sign Up" />
+                </div>
+                <!-- End Sign Button -->
+            </form>
+        </div>
+    </div>
+
+{% include 'footer.html' %}

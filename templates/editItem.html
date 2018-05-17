@@ -1,0 +1,45 @@
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+
+<div class="new-cat">
+    <div class="container">
+        <h1 class="text-center">Edit Item</h1>
+        <form method="POST" action="{{url_for('editItem', cat_id=cat_id, item_id = item_id)}}">
+            <!-- Start item name -->
+            <div class="cat-name form-group">
+                <label class="col col-md-3"> Name</label>
+
+               <input type="text"
+                      class="col col-md-6 form-control"
+                      required
+                      name="item_name"
+                      value="{{item.itemName}}"
+                      placeholder="Item Name">
+            </div>
+             <!-- end item name -->
+             <!-- Start item description -->
+            <div class="cat-description form-group">
+                <label class="col col-md-3">Description</label>
+                <textarea name="item_desc"  class="form-control col col-md-6 ">{{item.itemDesc}}</textarea>
+            </div>
+             <!-- end item description -->
+              <!-- Start item price -->
+            <div class="cat-name form-group">
+                <label class="col col-md-3">Price</label>
+               <input type="text"
+                      class="col col-md-6 form-control"
+                      required
+                      value="{{item.itemPrice}}"
+                      name="item_price"
+                      placeholder="Item price">
+            </div>
+             <!-- end item price -->
+            <input type="submit" class="btn btn-primary add-cat-btn" value="Edit item">
+            <button class="btn btn-danger cancel-cat-btn"><a href="{{url_for('index')}}">Cancel</a></button>
+        </form>
+
+    </div>
+</div>
+
+
+{% include 'footer.html' %}

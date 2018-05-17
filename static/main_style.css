@@ -1,0 +1,236 @@
+/* start General style */
+* {
+   font-family: -webkit-pictograph;
+}
+
+/* end General style */
+
+/* Start nav bar page */
+.navbar .addtion-links {
+    color: #FFF;
+    font-size: 26px;
+}
+.navbar .addtion-links .a-login,
+.navbar .addtion-links .a-sign,
+.a-logout {
+    color: #dad3d3;
+    font-size: 20px;
+    text-decoration: none;
+}
+.a-logout {
+    margin-right: 16px;
+}
+.navbar .addtion-links span {
+      margin-left: 10px;
+      margin-right: 10px;
+}
+
+/* End nav bar page */
+
+/* Start Sign Page */
+.sign-form,
+ .login-form {
+    width: 400px;
+    margin: auto;
+}
+.sign-form h1,
+.login-form h1 {
+    margin-bottom: 45px;
+    margin-top: 70px;
+    font-weight: bold;
+}
+.sign-form h1 {
+    color: #50a846;
+}
+.login-form h1 {
+    color: #007bff;
+}
+.sign-form .sign-btn,
+.login-form .login-btn {
+    width: 100%;
+}
+/*End Login Page */
+
+/*  start new cat page */
+ .new-cat h1 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: #948e8e;
+ }
+ .new-cat label {
+    color: #948e8e;
+ }
+
+.cat-name,
+.cat-description {
+    display: flex;
+}
+
+.cat-description {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    height: 150px;
+ }
+ .add-cat-btn {
+    margin-top: 2%;
+    margin-left: 41%;
+ }
+ .cancel-cat-btn {
+    margin-top: -65px;
+    margin-left: 56%;
+ }
+
+  .cancel-cat-btn a {
+    color: #FFF;
+    text-decoration: none;
+  }
+
+/*end new cat page */
+
+/*Start home page */
+.home h1 {
+    margin-top: 40px;
+    margin-bottom: 35px;
+    color: #948e8e;
+}
+.home .other-btn-cat {
+    margin-top: 15px;
+}
+.home .other-btn-cat a {
+    margin-top: 15px;
+}
+.home-cats .cat-info {
+    height: 260px;
+    margin-top: 30px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    color: # #948e8e;
+    position: relative;
+    background: #e6e6e6;
+    box-shadow: 1px 4px 11px #CCC;
+}
+.home .show-cat-btn {
+    width:100%;
+    margin-bottom: 5px;
+}
+.home-cats .cat-info h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    background: #ff930d;
+}
+.home-cats .cat-info .cat-btn {
+    margin-top: 20px;
+    position: absolute;
+    top: 138px;
+    left: 2px;
+    text-align: center;
+    width: 100%;
+}
+/* End home page */
+
+/* Start Items Page */
+.items h1 {
+    margin-top: 45px;
+    margin-bottom: 51px;
+}
+.items .item {
+    padding: 0;
+    padding: 10px;
+    margin-bottom: 35px;
+    box-shadow: 3px 5px 12px #CCC;
+
+}
+.items .item h3 {
+    text-align: center;
+    background: #ff930d;
+}
+.items .item p {
+    overflow: hidden;
+    margin-top: 15px;
+
+}
+.items .item p,
+ .items .item span {
+    color: #867e7e;
+    font-size: 19px;
+
+
+}
+.items .item .price-amount {
+    color: #b33232;
+    font-size: 18px;
+}
+@media (min-width: 768px)
+.col-md-3 {
+
+    max-width: 24%;
+}
+/* End Items Page */
+
+/* Start dashboard */
+.dashboard .users,
+.dashboard .cats,
+.dashboard .items {
+    width: 100%;
+    min-height: 164px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+}
+.dashboard .users {
+    box-shadow: 1px 4px 11px #5BE7C4;
+    background: #5BE7C4;
+}
+.dashboard .cats {
+    box-shadow: 1px 4px 11px #50C1E9;
+    background: #50C1E9;
+}
+.dashboard .items {
+    box-shadow: 1px 4px 11px #7A57D1;
+    background: #7A57D1;
+}
+.dashboard h1 {
+    margin-top: 33px;
+    margin-bottom: 60px;
+}
+.dashboard h3 {
+    display: block;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.dashboard span {
+    font-size: 35px;
+}
+
+/* end dashboard */
+
+/* start responsive */
+@media (min-width: 768px) and (max-width: 900px){
+    .buttons {
+        margin-left: -70px;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 767px){
+    .cancel-cat-btn {
+        margin-left: 63px;
+        margin-top: 7px;
+    }
+    .add-cat-btn {
+        margin-left: 51%;
+    }
+}
+@media (max-width: 499px){
+    .cancel-cat-btn {
+        margin-left: 290px;
+        margin-top: -65px;
+
+    }
+    .add-cat-btn {
+        margin-left: 45%;
+    }
+}
+/* end responsive */

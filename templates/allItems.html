@@ -1,0 +1,25 @@
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+
+<div class="items">
+    <div class="container">
+         <div class="item-info">
+            <div class="row">
+                {% for item in allItems %}
+                <div class="col col-lg-4 col-md-6 col-12">
+                    <div class="item  mg-responsive img-thumbnail">
+                        <h3>{{item.itemName}}</h3>
+                        <p>{{item.itemDesc}}</p>
+                        <span>Price:<span class="price-amount">{{item.itemPrice}}</span></span>
+
+                            <div>
+                                <a href="#" class="btn btn-info">Buy now</a>
+                            </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}

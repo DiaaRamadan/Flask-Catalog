@@ -1,0 +1,45 @@
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+
+{% with massages = get_flashed_messages() %}
+    {% if massages %}
+        {% for massage in massages %}
+            <p class="alert alert-danger container"><strong>{{massage}}</strong></p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+    <div class="login-form">
+        <div class="container">
+            <h1 class="text-center">Log In</h1>
+            <form class="form-group" method="POST">
+                <!-- Start Username -->
+                <div class="form-group">
+                    <input type="text"
+                           class="form-control"
+                           name="username"
+                           placeholder="Enter Username"
+                           required />
+                </div>
+                <!-- End Username -->
+                <!-- Start Password -->
+                <div class="form-group">
+                    <input type="password"
+                           class="form-control"
+                           name="password"
+                           placeholder="Enter Password"
+                           required />
+                </div>
+                <!-- End Password -->
+                <!-- Start Sign Button -->
+                <div class="form-group">
+                    <input type="submit"
+                           class="btn btn-primary login-btn"
+                           value="Log In" />
+                </div>
+                <!-- End Sign Button -->
+            </form>
+                <a href="{{url_for('gconnect')}}" class="btn btn-default">Login with google</a>
+        </div>
+    </div>
+{% include 'footer.html' %}
